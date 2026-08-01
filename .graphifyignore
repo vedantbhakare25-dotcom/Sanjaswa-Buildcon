@@ -1,0 +1,43 @@
+# Build artifacts and dependencies
+node_modules/
+dist/
+graphify-out/
+
+# Docs — require LLM semantic extraction
+*.md
+*.mdx
+*.qmd
+*.txt
+*.rst
+*.html
+*.yaml
+*.yml
+*.mdc
+
+# Papers and office documents
+*.pdf
+*.docx
+*.xlsx
+
+# Images
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.svg
+
+# Video and audio
+*.mp4
+*.mov
+*.webm
+*.mkv
+*.avi
+*.m4v
+*.mp3
+*.wav
+*.m4a
+*.ogg
+
+# Logs
+*.log

@@ -1,0 +1,28 @@
+---
+description: graphify knowledge graph context
+alwaysApply: true
+---
+
+This project has a graphify knowledge graph at graphify-out/.
+
+## Before doing any task
+
+1. Use Graphify first — do not start with broad file searches, grep, or glob until Graphify has been consulted.
+2. Read `graphify-out/GRAPH_REPORT.md` for broad architecture context.
+3. Run targeted Graphify commands:
+   - `graphify query "<question>"` — scoped subgraph for a question
+   - `graphify path "<A>" "<B>"` — shortest path between two nodes
+   - `graphify explain "<concept>"` — plain-language explanation of a node and its neighbors
+4. If `graphify-out/wiki/index.md` exists, navigate it instead of reading raw files.
+5. Explain the architecture relevant to the task (based on Graphify output and GRAPH_REPORT.md).
+6. Propose a plan.
+7. **Wait for user approval before writing or changing code.**
+
+## After code changes
+
+- Run `graphify update .` to keep the graph current (AST-only, no API cost).
+
+## Fallback
+
+- Read `graphify-out/GRAPH_REPORT.md` only for broad architecture review or when query/path/explain do not surface enough context.
+- Use raw file reads or searches only on files/nodes identified by Graphify — not as a first step.

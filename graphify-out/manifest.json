@@ -1,0 +1,112 @@
+{
+  "package.json": {
+    "mtime": 1781597457.285413,
+    "ast_hash": "d7056b55978f94768a87ec577725732e",
+    "semantic_hash": "d7056b55978f94768a87ec577725732e"
+  },
+  "postcss.config.js": {
+    "mtime": 1781597458.2845697,
+    "ast_hash": "c735540bb63936a123bc867d950c9f69",
+    "semantic_hash": "c735540bb63936a123bc867d950c9f69"
+  },
+  "src/App.jsx": {
+    "mtime": 1781597458.8252234,
+    "ast_hash": "99e53cc4d63c615a72b0e4ed63b25220",
+    "semantic_hash": "99e53cc4d63c615a72b0e4ed63b25220"
+  },
+  "src/components/animations/CompanyNameScreen.jsx": {
+    "mtime": 1781599539.0252736,
+    "ast_hash": "63a23d712b68bd11dd14ad35a2e14671",
+    "semantic_hash": "63a23d712b68bd11dd14ad35a2e14671"
+  },
+  "src/components/animations/IntroSequence.jsx": {
+    "mtime": 1781668466.8810167,
+    "ast_hash": "c1059c663654897aedb69e784179e79e",
+    "semantic_hash": "c1059c663654897aedb69e784179e79e"
+  },
+  "src/components/animations/LogoScreen.jsx": {
+    "mtime": 1781667781.9096415,
+    "ast_hash": "c127f472289bb0e18368463d5a59ea3c",
+    "semantic_hash": "c127f472289bb0e18368463d5a59ea3c"
+  },
+  "src/components/animations/ShlokaScreen.jsx": {
+    "mtime": 1781668467.5154223,
+    "ast_hash": "6f4b5eef0e56f14289e5d6479224e277",
+    "semantic_hash": "6f4b5eef0e56f14289e5d6479224e277"
+  },
+  "src/components/home/BackgroundSlideshow.jsx": {
+    "mtime": 1781753720.919531,
+    "ast_hash": "abdb22c4d42e970ef626cc66d5b74cff",
+    "semantic_hash": ""
+  },
+  "src/components/home/HeroCTA.jsx": {
+    "mtime": 1781755335.9706762,
+    "ast_hash": "2cdf2f1603816d2e39a33f1912b53052",
+    "semantic_hash": ""
+  },
+  "src/components/home/HeroContent.jsx": {
+    "mtime": 1781755331.355749,
+    "ast_hash": "9f033682dab4c204da51ba1b94b0f3c8",
+    "semantic_hash": ""
+  },
+  "src/components/home/HeroLogo.jsx": {
+    "mtime": 1781753401.3503904,
+    "ast_hash": "012b2a30cda7516004117f122536ac29",
+    "semantic_hash": ""
+  },
+  "src/components/home/HeroSection.jsx": {
+    "mtime": 1781755329.4479365,
+    "ast_hash": "03af73fea92fad818d1a338b514e2033",
+    "semantic_hash": ""
+  },
+  "src/components/home/HeroShloka.jsx": {
+    "mtime": 1781755338.9023607,
+    "ast_hash": "6608b5ece05ac81aa2fe08dbb4160839",
+    "semantic_hash": ""
+  },
+  "src/components/home/HeroTitle.jsx": {
+    "mtime": 1781755337.567377,
+    "ast_hash": "209c56e1b2a4e21bd9ca02f411b3484f",
+    "semantic_hash": ""
+  },
+  "src/components/home/MobileMenuButton.jsx": {
+    "mtime": 1781753412.6534474,
+    "ast_hash": "3239e919b3b449d029aafa52e16ef300",
+    "semantic_hash": ""
+  },
+  "src/components/home/ScrollIndicator.jsx": {
+    "mtime": 1781755334.2641227,
+    "ast_hash": "4d409767bc01ee743dd0b63ead0dd6d8",
+    "semantic_hash": ""
+  },
+  "src/main.jsx": {
+    "mtime": 1781597458.6371512,
+    "ast_hash": "815681edbb59ee52134df1bea4991bfd",
+    "semantic_hash": "815681edbb59ee52134df1bea4991bfd"
+  },
+  "src/pages/Home.jsx": {
+    "mtime": 1781668670.210305,
+    "ast_hash": "b5aa57b0ca1a3f1a2f4af72f7f7437c9",
+    "semantic_hash": "b5aa57b0ca1a3f1a2f4af72f7f7437c9"
+  },
+  "src/pages/Intro.jsx": {
+    "mtime": 1781597459.3842175,
+    "ast_hash": "9dde3dc630715fa4a756c8beb119094e",
+    "semantic_hash": "9dde3dc630715fa4a756c8beb119094e"
+  },
+  "src/routes/AppRoutes.jsx": {
+    "mtime": 1781668637.3297527,
+    "ast_hash": "51a1e95cb51c9e778bedd16f9bdc7a87",
+    "semantic_hash": "51a1e95cb51c9e778bedd16f9bdc7a87"
+  },
+  "tailwind.config.js": {
+    "mtime": 1781599515.2645028,
+    "ast_hash": "375ce58decb71379b0fcc8202abfb771",
+    "semantic_hash": "375ce58decb71379b0fcc8202abfb771"
+  },
+  "vite.config.js": {
+    "mtime": 1781597457.8133836,
+    "ast_hash": "eb98c53348e57a55028f415914969a6b",
+    "semantic_hash": "eb98c53348e57a55028f415914969a6b"
+  }
+}

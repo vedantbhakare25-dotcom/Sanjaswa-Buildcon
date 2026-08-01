@@ -1,0 +1,1193 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L1",
+      "id": "package",
+      "community": 2,
+      "norm_label": "package.json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "id": "package_name",
+      "community": 2,
+      "norm_label": "name"
+    },
+    {
+      "label": "private",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "id": "package_private",
+      "community": 2,
+      "norm_label": "private"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "id": "package_version",
+      "community": 2,
+      "norm_label": "version"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "id": "package_type",
+      "community": 2,
+      "norm_label": "type"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "id": "package_scripts",
+      "community": 2,
+      "norm_label": "scripts"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "id": "package_scripts_dev",
+      "community": 2,
+      "norm_label": "dev"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "id": "package_scripts_build",
+      "community": 2,
+      "norm_label": "build"
+    },
+    {
+      "label": "preview",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "id": "package_scripts_preview",
+      "community": 2,
+      "norm_label": "preview"
+    },
+    {
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "id": "package_dependencies",
+      "community": 5,
+      "norm_label": "dependencies"
+    },
+    {
+      "label": "@vitejs/plugin-react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "id": "package_dependencies_vitejs_plugin_react",
+      "community": 5,
+      "norm_label": "@vitejs/plugin-react"
+    },
+    {
+      "label": "framer-motion",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "id": "package_dependencies_framer_motion",
+      "community": 5,
+      "norm_label": "framer-motion"
+    },
+    {
+      "label": "react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "id": "package_dependencies_react",
+      "community": 5,
+      "norm_label": "react"
+    },
+    {
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "id": "package_dependencies_react_dom",
+      "community": 5,
+      "norm_label": "react-dom"
+    },
+    {
+      "label": "react-router-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "id": "package_dependencies_react_router_dom",
+      "community": 5,
+      "norm_label": "react-router-dom"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "id": "package_devdependencies",
+      "community": 6,
+      "norm_label": "devdependencies"
+    },
+    {
+      "label": "autoprefixer",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "id": "package_devdependencies_autoprefixer",
+      "community": 6,
+      "norm_label": "autoprefixer"
+    },
+    {
+      "label": "postcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "id": "package_devdependencies_postcss",
+      "community": 6,
+      "norm_label": "postcss"
+    },
+    {
+      "label": "tailwindcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "id": "package_devdependencies_tailwindcss",
+      "community": 6,
+      "norm_label": "tailwindcss"
+    },
+    {
+      "label": "vite",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "id": "package_devdependencies_vite",
+      "community": 6,
+      "norm_label": "vite"
+    },
+    {
+      "label": "postcss.config.js",
+      "file_type": "code",
+      "source_file": "postcss.config.js",
+      "source_location": "L1",
+      "id": "postcss_config",
+      "community": 7,
+      "norm_label": "postcss.config.js"
+    },
+    {
+      "label": "App.jsx",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L1",
+      "id": "src_app",
+      "community": 3,
+      "norm_label": "app.jsx"
+    },
+    {
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L3",
+      "id": "src_app_app",
+      "community": 3,
+      "norm_label": "app()"
+    },
+    {
+      "label": "CompanyNameScreen.jsx",
+      "file_type": "code",
+      "source_file": "src/components/animations/CompanyNameScreen.jsx",
+      "source_location": "L1",
+      "id": "animations_companynamescreen",
+      "community": 0,
+      "norm_label": "companynamescreen.jsx"
+    },
+    {
+      "label": "screenMotion",
+      "file_type": "code",
+      "source_file": "src/components/animations/CompanyNameScreen.jsx",
+      "source_location": "L3",
+      "id": "animations_companynamescreen_screenmotion",
+      "community": 0,
+      "norm_label": "screenmotion"
+    },
+    {
+      "label": "CompanyNameScreen()",
+      "file_type": "code",
+      "source_file": "src/components/animations/CompanyNameScreen.jsx",
+      "source_location": "L19",
+      "id": "animations_companynamescreen_companynamescreen",
+      "community": 0,
+      "norm_label": "companynamescreen()"
+    },
+    {
+      "label": "IntroSequence.jsx",
+      "file_type": "code",
+      "source_file": "src/components/animations/IntroSequence.jsx",
+      "source_location": "L1",
+      "id": "animations_introsequence",
+      "community": 0,
+      "norm_label": "introsequence.jsx"
+    },
+    {
+      "label": "INTRO_TIMELINE",
+      "file_type": "code",
+      "source_file": "src/components/animations/IntroSequence.jsx",
+      "source_location": "L8",
+      "id": "animations_introsequence_intro_timeline",
+      "community": 0,
+      "norm_label": "intro_timeline"
+    },
+    {
+      "label": "IntroSequence()",
+      "file_type": "code",
+      "source_file": "src/components/animations/IntroSequence.jsx",
+      "source_location": "L26",
+      "id": "animations_introsequence_introsequence",
+      "community": 0,
+      "norm_label": "introsequence()"
+    },
+    {
+      "label": "LogoScreen.jsx",
+      "file_type": "code",
+      "source_file": "src/components/animations/LogoScreen.jsx",
+      "source_location": "L1",
+      "id": "animations_logoscreen",
+      "community": 0,
+      "norm_label": "logoscreen.jsx"
+    },
+    {
+      "label": "screenMotion",
+      "file_type": "code",
+      "source_file": "src/components/animations/LogoScreen.jsx",
+      "source_location": "L4",
+      "id": "animations_logoscreen_screenmotion",
+      "community": 0,
+      "norm_label": "screenmotion"
+    },
+    {
+      "label": "LogoScreen()",
+      "file_type": "code",
+      "source_file": "src/components/animations/LogoScreen.jsx",
+      "source_location": "L20",
+      "id": "animations_logoscreen_logoscreen",
+      "community": 0,
+      "norm_label": "logoscreen()"
+    },
+    {
+      "label": "ShlokaScreen.jsx",
+      "file_type": "code",
+      "source_file": "src/components/animations/ShlokaScreen.jsx",
+      "source_location": "L1",
+      "id": "animations_shlokascreen",
+      "community": 0,
+      "norm_label": "shlokascreen.jsx"
+    },
+    {
+      "label": "screenMotion",
+      "file_type": "code",
+      "source_file": "src/components/animations/ShlokaScreen.jsx",
+      "source_location": "L3",
+      "id": "animations_shlokascreen_screenmotion",
+      "community": 0,
+      "norm_label": "screenmotion"
+    },
+    {
+      "label": "ShlokaScreen()",
+      "file_type": "code",
+      "source_file": "src/components/animations/ShlokaScreen.jsx",
+      "source_location": "L19",
+      "id": "animations_shlokascreen_shlokascreen",
+      "community": 0,
+      "norm_label": "shlokascreen()"
+    },
+    {
+      "label": "BackgroundSlideshow.jsx",
+      "file_type": "code",
+      "source_file": "src/components/home/BackgroundSlideshow.jsx",
+      "source_location": "L1",
+      "id": "home_backgroundslideshow",
+      "community": 4,
+      "norm_label": "backgroundslideshow.jsx"
+    },
+    {
+      "label": "heroImageModules",
+      "file_type": "code",
+      "source_file": "src/components/home/BackgroundSlideshow.jsx",
+      "source_location": "L4",
+      "id": "home_backgroundslideshow_heroimagemodules",
+      "community": 4,
+      "norm_label": "heroimagemodules"
+    },
+    {
+      "label": "HERO_IMAGES",
+      "file_type": "code",
+      "source_file": "src/components/home/BackgroundSlideshow.jsx",
+      "source_location": "L9",
+      "id": "home_backgroundslideshow_hero_images",
+      "community": 4,
+      "norm_label": "hero_images"
+    },
+    {
+      "label": "BackgroundSlideshow()",
+      "file_type": "code",
+      "source_file": "src/components/home/BackgroundSlideshow.jsx",
+      "source_location": "L12",
+      "id": "home_backgroundslideshow_backgroundslideshow",
+      "community": 4,
+      "norm_label": "backgroundslideshow()"
+    },
+    {
+      "label": "HeroCTA.jsx",
+      "file_type": "code",
+      "source_file": "src/components/home/HeroCTA.jsx",
+      "source_location": "L1",
+      "id": "home_herocta",
+      "community": 1,
+      "norm_label": "herocta.jsx"
+    },
+    {
+      "label": "HeroCTA()",
+      "file_type": "code",
+      "source_file": "src/components/home/HeroCTA.jsx",
+      "source_location": "L3",
+      "id": "home_herocta_herocta",
+      "community": 1,
+      "norm_label": "herocta()"
+    },
+    {
+      "label": "HeroContent.jsx",
+      "file_type": "code",
+      "source_file": "src/components/home/HeroContent.jsx",
+      "source_location": "L1",
+      "id": "home_herocontent",
+      "community": 1,
+      "norm_label": "herocontent.jsx"
+    },
+    {
+      "label": "HeroContent()",
+      "file_type": "code",
+      "source_file": "src/components/home/HeroContent.jsx",
+      "source_location": "L6",
+      "id": "home_herocontent_herocontent",
+      "community": 1,
+      "norm_label": "herocontent()"
+    },
+    {
+      "label": "HeroLogo.jsx",
+      "file_type": "code",
+      "source_file": "src/components/home/HeroLogo.jsx",
+      "source_location": "L1",
+      "id": "home_herologo",
+      "community": 1,
+      "norm_label": "herologo.jsx"
+    },
+    {
+      "label": "HeroLogo()",
+      "file_type": "code",
+      "source_file": "src/components/home/HeroLogo.jsx",
+      "source_location": "L4",
+      "id": "home_herologo_herologo",
+      "community": 1,
+      "norm_label": "herologo()"
+    },
+    {
+      "label": "HeroSection.jsx",
+      "file_type": "code",
+      "source_file": "src/components/home/HeroSection.jsx",
+      "source_location": "L1",
+      "id": "home_herosection",
+      "community": 4,
+      "norm_label": "herosection.jsx"
+    },
+    {
+      "label": "HeroSection()",
+      "file_type": "code",
+      "source_file": "src/components/home/HeroSection.jsx",
+      "source_location": "L7",
+      "id": "home_herosection_herosection",
+      "community": 4,
+      "norm_label": "herosection()"
+    },
+    {
+      "label": "HeroShloka.jsx",
+      "file_type": "code",
+      "source_file": "src/components/home/HeroShloka.jsx",
+      "source_location": "L1",
+      "id": "home_heroshloka",
+      "community": 1,
+      "norm_label": "heroshloka.jsx"
+    },
+    {
+      "label": "HeroShloka()",
+      "file_type": "code",
+      "source_file": "src/components/home/HeroShloka.jsx",
+      "source_location": "L3",
+      "id": "home_heroshloka_heroshloka",
+      "community": 1,
+      "norm_label": "heroshloka()"
+    },
+    {
+      "label": "HeroTitle.jsx",
+      "file_type": "code",
+      "source_file": "src/components/home/HeroTitle.jsx",
+      "source_location": "L1",
+      "id": "home_herotitle",
+      "community": 1,
+      "norm_label": "herotitle.jsx"
+    },
+    {
+      "label": "HeroTitle()",
+      "file_type": "code",
+      "source_file": "src/components/home/HeroTitle.jsx",
+      "source_location": "L3",
+      "id": "home_herotitle_herotitle",
+      "community": 1,
+      "norm_label": "herotitle()"
+    },
+    {
+      "label": "MobileMenuButton.jsx",
+      "file_type": "code",
+      "source_file": "src/components/home/MobileMenuButton.jsx",
+      "source_location": "L1",
+      "id": "home_mobilemenubutton",
+      "community": 4,
+      "norm_label": "mobilemenubutton.jsx"
+    },
+    {
+      "label": "MobileMenuButton()",
+      "file_type": "code",
+      "source_file": "src/components/home/MobileMenuButton.jsx",
+      "source_location": "L1",
+      "id": "home_mobilemenubutton_mobilemenubutton",
+      "community": 4,
+      "norm_label": "mobilemenubutton()"
+    },
+    {
+      "label": "ScrollIndicator.jsx",
+      "file_type": "code",
+      "source_file": "src/components/home/ScrollIndicator.jsx",
+      "source_location": "L1",
+      "id": "home_scrollindicator",
+      "community": 4,
+      "norm_label": "scrollindicator.jsx"
+    },
+    {
+      "label": "ScrollIndicator()",
+      "file_type": "code",
+      "source_file": "src/components/home/ScrollIndicator.jsx",
+      "source_location": "L3",
+      "id": "home_scrollindicator_scrollindicator",
+      "community": 4,
+      "norm_label": "scrollindicator()"
+    },
+    {
+      "label": "main.jsx",
+      "file_type": "code",
+      "source_file": "src/main.jsx",
+      "source_location": "L1",
+      "id": "src_main",
+      "community": 3,
+      "norm_label": "main.jsx"
+    },
+    {
+      "label": "Home.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L1",
+      "id": "pages_home",
+      "community": 3,
+      "norm_label": "home.jsx"
+    },
+    {
+      "label": "Home()",
+      "file_type": "code",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L4",
+      "id": "pages_home_home",
+      "community": 3,
+      "norm_label": "home()"
+    },
+    {
+      "label": "Intro.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/Intro.jsx",
+      "source_location": "L1",
+      "id": "pages_intro",
+      "community": 3,
+      "norm_label": "intro.jsx"
+    },
+    {
+      "label": "Intro()",
+      "file_type": "code",
+      "source_file": "src/pages/Intro.jsx",
+      "source_location": "L3",
+      "id": "pages_intro_intro",
+      "community": 3,
+      "norm_label": "intro()"
+    },
+    {
+      "label": "AppRoutes.jsx",
+      "file_type": "code",
+      "source_file": "src/routes/AppRoutes.jsx",
+      "source_location": "L1",
+      "id": "routes_approutes",
+      "community": 3,
+      "norm_label": "approutes.jsx"
+    },
+    {
+      "label": "AppRoutes()",
+      "file_type": "code",
+      "source_file": "src/routes/AppRoutes.jsx",
+      "source_location": "L5",
+      "id": "routes_approutes_approutes",
+      "community": 3,
+      "norm_label": "approutes()"
+    },
+    {
+      "label": "tailwind.config.js",
+      "file_type": "code",
+      "source_file": "tailwind.config.js",
+      "source_location": "L1",
+      "id": "tailwind_config",
+      "community": 8,
+      "norm_label": "tailwind.config.js"
+    },
+    {
+      "label": "vite.config.js",
+      "file_type": "code",
+      "source_file": "vite.config.js",
+      "source_location": "L1",
+      "id": "vite_config",
+      "community": 9,
+      "norm_label": "vite.config.js"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_dependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_devdependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_name"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_private"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_scripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_type"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_version"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_build"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_dev"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_preview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_framer_motion"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_router_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_vitejs_plugin_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_autoprefixer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_postcss"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_tailwindcss"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_vite"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "routes_approutes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "src_app_app"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_main",
+      "target": "src_app"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/animations/CompanyNameScreen.jsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "animations_companynamescreen",
+      "target": "animations_companynamescreen_companynamescreen",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/animations/CompanyNameScreen.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "animations_companynamescreen",
+      "target": "animations_companynamescreen_screenmotion"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/animations/IntroSequence.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "animations_introsequence",
+      "target": "animations_companynamescreen"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/animations/IntroSequence.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "animations_introsequence",
+      "target": "animations_introsequence_intro_timeline"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/animations/IntroSequence.jsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "animations_introsequence",
+      "target": "animations_introsequence_introsequence",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/animations/IntroSequence.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "animations_introsequence",
+      "target": "animations_logoscreen"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/animations/IntroSequence.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "animations_introsequence",
+      "target": "animations_shlokascreen"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Intro.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_intro",
+      "target": "animations_introsequence"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/animations/LogoScreen.jsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "animations_logoscreen",
+      "target": "animations_logoscreen_logoscreen"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/animations/LogoScreen.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "animations_logoscreen",
+      "target": "animations_logoscreen_screenmotion"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/animations/ShlokaScreen.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "animations_shlokascreen",
+      "target": "animations_shlokascreen_screenmotion"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/animations/ShlokaScreen.jsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "animations_shlokascreen",
+      "target": "animations_shlokascreen_shlokascreen"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/home/BackgroundSlideshow.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "home_backgroundslideshow",
+      "target": "home_backgroundslideshow_backgroundslideshow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/home/BackgroundSlideshow.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "home_backgroundslideshow",
+      "target": "home_backgroundslideshow_hero_images"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/home/BackgroundSlideshow.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "home_backgroundslideshow",
+      "target": "home_backgroundslideshow_heroimagemodules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/home/HeroSection.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "home_herosection",
+      "target": "home_backgroundslideshow"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/home/HeroContent.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "home_herocontent",
+      "target": "home_herocta"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/home/HeroCTA.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "home_herocta",
+      "target": "home_herocta_herocta"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/home/HeroContent.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "home_herocontent",
+      "target": "home_herocontent_herocontent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/home/HeroContent.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "home_herocontent",
+      "target": "home_herologo"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/home/HeroContent.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "home_herocontent",
+      "target": "home_heroshloka"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/home/HeroContent.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "home_herocontent",
+      "target": "home_herotitle"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/home/HeroSection.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "home_herosection",
+      "target": "home_herocontent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/home/HeroLogo.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "home_herologo",
+      "target": "home_herologo_herologo"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/home/HeroSection.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "home_herosection",
+      "target": "home_herosection_herosection"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/home/HeroSection.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "home_herosection",
+      "target": "home_mobilemenubutton"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/home/HeroSection.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "home_herosection",
+      "target": "home_scrollindicator"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_home",
+      "target": "home_herosection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/home/HeroShloka.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "home_heroshloka",
+      "target": "home_heroshloka_heroshloka"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/home/HeroTitle.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "home_herotitle",
+      "target": "home_herotitle_herotitle"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/home/MobileMenuButton.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "home_mobilemenubutton",
+      "target": "home_mobilemenubutton_mobilemenubutton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/home/ScrollIndicator.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "home_scrollindicator",
+      "target": "home_scrollindicator_scrollindicator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_home",
+      "target": "pages_home_home"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/routes/AppRoutes.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_approutes",
+      "target": "pages_home"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Intro.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_intro",
+      "target": "pages_intro_intro"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/routes/AppRoutes.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_approutes",
+      "target": "pages_intro"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/routes/AppRoutes.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "routes_approutes",
+      "target": "routes_approutes_approutes",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": []
+}
