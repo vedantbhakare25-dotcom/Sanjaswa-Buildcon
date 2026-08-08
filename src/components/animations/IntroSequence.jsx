@@ -2,53 +2,50 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import logo from "../../assets/images/logo.png";
 
-// Smooth cinematic easing curve
-const SMOOTH_EASE = [0.16, 1, 0.3, 1];
-const EXIT_EASE = [0.7, 0, 0.84, 0];
+// Restrained Apple/Linear easing curve & timing
+const EASE_SPEC = [0.16, 1, 0.3, 1];
+
+// Hardware compositing style helper to force GPU layer promotion
+// and prevent CPU subpixel text antialiasing re-rasterization jitter
+const GPU_LAYER_STYLE = {
+  transform: "translate3d(0,0,0)",
+  backfaceVisibility: "hidden",
+  WebkitFontSmoothing: "antialiased",
+  willChange: "transform, opacity",
+};
 
 const STAGE_VARIANTS = {
   initial: {
     opacity: 0,
-    y: 20,
-    scale: 0.96,
-    filter: "blur(10px)",
   },
   animate: {
     opacity: 1,
-    y: 0,
-    scale: 1,
-    filter: "blur(0px)",
     transition: {
-      duration: 1.1,
-      ease: SMOOTH_EASE,
-      staggerChildren: 0.16,
+      duration: 0.45,
+      ease: EASE_SPEC,
+      staggerChildren: 0.08,
     },
   },
   exit: {
     opacity: 0,
-    y: -16,
-    scale: 1.02,
-    filter: "blur(8px)",
     transition: {
-      duration: 0.7,
-      ease: EXIT_EASE,
-      staggerChildren: 0.08,
-      staggerDirection: -1,
+      duration: 0.35,
+      ease: EASE_SPEC,
     },
   },
 };
 
-const ITEM_VARIANTS = {
-  initial: { opacity: 0, y: 20 },
+const CHILD_VARIANTS = {
+  initial: { opacity: 0, y: 8 },
   animate: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.9, ease: SMOOTH_EASE },
+    transition: { duration: 0.4, ease: EASE_SPEC },
   },
   exit: {
     opacity: 0,
-    y: -14,
-    transition: { duration: 0.5, ease: EXIT_EASE },
+    y: -6,
+    transition: { duration: 0.3, ease: EASE_SPEC },
   },
 };
 
@@ -59,108 +56,144 @@ function LogoStage() {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="flex items-center justify-center"
+      style={GPU_LAYER_STYLE}
+      className="flex flex-col items-center justify-center text-center"
     >
+      {/* Frameless Printed Logo with GPU Compositing Promotion */}
       <motion.img
+        variants={CHILD_VARIANTS}
         src={logo}
         alt="Sanjaswa Builcon Logo"
-        className="h-60 w-60 object-contain sm:h-72 sm:w-72 md:h-80 md:w-80 lg:h-96 lg:w-96"
-        style={{
-          willChange: "transform, opacity, filter",
-          filter:
-            "drop-shadow(0 16px 48px rgba(31,72,255,0.16)) drop-shadow(0 0 90px rgba(31,72,255,0.12))",
-        }}
+        decoding="async"
+        loading="eager"
+        style={GPU_LAYER_STYLE}
+        className="h-44 w-44 sm:h-56 sm:w-56 md:h-64 md:w-64 lg:h-72 lg:w-72 object-contain pointer-events-none"
       />
     </motion.div>
   );
 }
 
-function CompanyNameStage() {
+function IdentityStage() {
   return (
     <motion.div
       variants={STAGE_VARIANTS}
       initial="initial"
       animate="animate"
       exit="exit"
-      className="text-center px-6"
-      style={{ willChange: "transform, opacity, filter" }}
+      style={GPU_LAYER_STYLE}
+      className="flex flex-col items-center justify-center text-center max-w-3xl px-6"
     >
       <motion.p
-        variants={ITEM_VARIANTS}
-        className="mb-5 text-xs sm:text-sm font-semibold uppercase tracking-[0.38em]"
+        variants={CHILD_VARIANTS}
         style={{
-          color: "rgba(31,72,255,0.65)",
+          ...GPU_LAYER_STYLE,
           fontFamily: "Inter, sans-serif",
+          fontSize: "10px",
+          letterSpacing: "0.35em",
+          color: "rgba(31, 72, 255, 0.65)",
         }}
+        className="uppercase font-medium mb-4"
       >
-        Building With Precision
+        BUILDING WITH PRECISION
       </motion.p>
 
       <motion.h1
-        variants={ITEM_VARIANTS}
+        variants={CHILD_VARIANTS}
         style={{
+          ...GPU_LAYER_STYLE,
           fontFamily: '"Barlow Condensed", "Bebas Neue", Impact, sans-serif',
-          fontWeight: 900,
-          fontSize: "clamp(3.5rem, 10vw, 7rem)",
-          lineHeight: 0.95,
-          letterSpacing: "0.03em",
-          textTransform: "uppercase",
           color: "#1F48FF",
-          textShadow: "0 0 40px rgba(31,72,255,0.15)",
+          lineHeight: 0.98,
+          letterSpacing: "0.02em",
         }}
+        className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight uppercase"
       >
         SANJASWA BUILDCON
       </motion.h1>
+
+      {/* Specified Separator Rule */}
+      <motion.div
+        variants={CHILD_VARIANTS}
+        style={{
+          ...GPU_LAYER_STYLE,
+          height: "1px",
+          width: "48px",
+          background: "rgba(31, 72, 255, 0.30)",
+        }}
+        className="my-6"
+      />
+
+      <motion.p
+        variants={CHILD_VARIANTS}
+        style={{
+          ...GPU_LAYER_STYLE,
+          fontFamily: "Inter, sans-serif",
+          fontSize: "10px",
+          letterSpacing: "0.35em",
+          color: "rgba(31, 72, 255, 0.65)",
+        }}
+        className="uppercase font-medium"
+      >
+        RESIDENTIAL · COMMERCIAL · INFRASTRUCTURE
+      </motion.p>
     </motion.div>
   );
 }
 
-function ShlokaStage() {
+function HeritageStage() {
   return (
     <motion.div
       variants={STAGE_VARIANTS}
       initial="initial"
       animate="animate"
       exit="exit"
-      className="max-w-5xl text-center px-6"
-      style={{ willChange: "transform, opacity, filter" }}
+      style={GPU_LAYER_STYLE}
+      className="flex flex-col items-center justify-center text-center max-w-3xl px-6"
     >
       <motion.p
-        variants={ITEM_VARIANTS}
-        className="font-sanskrit"
+        variants={CHILD_VARIANTS}
         style={{
-          fontSize: "clamp(2rem, 5vw, 3.8rem)",
-          lineHeight: 1.45,
-          fontWeight: 600,
+          ...GPU_LAYER_STYLE,
           color: "#1F48FF",
-          textShadow: "0 0 35px rgba(31,72,255,0.15)",
         }}
+        className="font-sanskrit text-2xl sm:text-4xl md:text-5xl font-medium leading-relaxed"
       >
         दृढमूलं हि यत् कार्यं न तद् विपद्यते क्वचित्।
       </motion.p>
 
-      <motion.p
-        variants={ITEM_VARIANTS}
+      {/* Specified Separator Rule */}
+      <motion.div
+        variants={CHILD_VARIANTS}
         style={{
-          marginTop: "2rem",
-          fontFamily: "Inter, sans-serif",
-          fontSize: "0.92rem",
-          fontWeight: 500,
-          letterSpacing: "0.32em",
-          textTransform: "uppercase",
-          color: "rgba(31,72,255,0.55)",
+          ...GPU_LAYER_STYLE,
+          height: "1px",
+          width: "48px",
+          background: "rgba(31, 72, 255, 0.30)",
         }}
+        className="my-6"
+      />
+
+      <motion.p
+        variants={CHILD_VARIANTS}
+        style={{
+          ...GPU_LAYER_STYLE,
+          fontFamily: "Inter, sans-serif",
+          fontSize: "10px",
+          letterSpacing: "0.35em",
+          color: "rgba(31, 72, 255, 0.65)",
+        }}
+        className="uppercase font-medium"
       >
-        A work built on a strong foundation never fails.
+        A WORK BUILT ON A STRONG FOUNDATION NEVER FAILS.
       </motion.p>
     </motion.div>
   );
 }
 
 const TIMELINE = [
-  { id: "logo", duration: 2600, Component: LogoStage },
-  { id: "company", duration: 3000, Component: CompanyNameStage },
-  { id: "shloka", duration: 3400, Component: ShlokaStage },
+  { id: "logo", duration: 2200, Component: LogoStage },
+  { id: "identity", duration: 2600, Component: IdentityStage },
+  { id: "heritage", duration: 2800, Component: HeritageStage },
 ];
 
 function IntroSequence({ onComplete }) {
@@ -180,68 +213,67 @@ function IntroSequence({ onComplete }) {
     return () => clearTimeout(timer);
   }, [stage]);
 
+  // Keyboard ESC listener for immediate completion
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape" || e.key === "Esc") {
+        setFinished(true);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown, { passive: true });
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  const handleSkip = () => {
+    setFinished(true);
+  };
+
   const CurrentComponent = TIMELINE[stage]?.Component;
 
   return (
     <AnimatePresence onExitComplete={onComplete}>
       {!finished && (
         <motion.div
-          className="fixed inset-0 z-50 overflow-hidden bg-white"
+          className="fixed inset-0 h-[100dvh] w-full z-50 flex flex-col justify-between overflow-hidden select-none"
+          style={{
+            background: "#FAFAF8",
+            contain: "layout style",
+            ...GPU_LAYER_STYLE,
+          }}
           initial={{ y: 0 }}
           exit={{
             y: "-100%",
             transition: {
-              duration: 1.2,
+              duration: 0.7,
               ease: [0.76, 0, 0.24, 1],
             },
           }}
         >
-          {/* Ambient Motion Glow 1 - Top Left */}
-          <motion.div
-            animate={{
-              scale: [1, 1.15, 1],
-              opacity: [0.6, 0.9, 0.6],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="absolute -top-72 -left-72 h-[900px] w-[900px] rounded-full pointer-events-none"
-            style={{
-              background:
-                "radial-gradient(circle, rgba(31,72,255,0.08) 0%, transparent 70%)",
-              filter: "blur(130px)",
-            }}
-          />
+          {/* Top Control Bar with Minimalist Pure CSS Skip Button */}
+          <header className="relative z-10 flex items-center justify-end px-6 py-6 sm:px-10 sm:py-8">
+            <button
+              type="button"
+              onClick={handleSkip}
+              className="rounded-lg px-4 py-2 font-medium uppercase tracking-[0.25em] text-[10px] border border-[rgba(31,72,255,0.18)] bg-transparent text-[rgba(31,72,255,0.75)] transition-all duration-200 hover:border-[rgba(31,72,255,0.38)] hover:bg-[rgba(31,72,255,0.04)] hover:text-[#1F48FF] cursor-pointer"
+              style={{ fontFamily: "Inter, sans-serif" }}
+              aria-label="Skip intro animation"
+            >
+              <span>SKIP ✕</span>
+            </button>
+          </header>
 
-          {/* Ambient Motion Glow 2 - Bottom Right */}
-          <motion.div
-            animate={{
-              scale: [1.1, 1, 1.1],
-              opacity: [0.5, 0.8, 0.5],
-            }}
-            transition={{
-              duration: 7,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="absolute -bottom-72 -right-72 h-[900px] w-[900px] rounded-full pointer-events-none"
-            style={{
-              background:
-                "radial-gradient(circle, rgba(31,72,255,0.07) 0%, transparent 70%)",
-              filter: "blur(130px)",
-            }}
-          />
-
-          {/* Main Stage Display */}
-          <div className="relative flex h-full items-center justify-center overflow-hidden px-6">
+          {/* Main Stage Display Area */}
+          <main className="relative z-10 flex flex-1 items-center justify-center px-6">
             <AnimatePresence mode="wait">
               {CurrentComponent && (
                 <CurrentComponent key={TIMELINE[stage].id} />
               )}
             </AnimatePresence>
-          </div>
+          </main>
+
+          {/* Bottom Spacing Spacer */}
+          <footer className="relative z-10 px-6 py-6 sm:px-10 sm:py-8" />
         </motion.div>
       )}
     </AnimatePresence>
