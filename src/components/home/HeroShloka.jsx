@@ -30,24 +30,24 @@ function HeroShloka() {
   const current = shlokas[index];
 
   return (
-    <div className="text-left lg:text-right">
+    <div className="text-left sm:text-right">
       <AnimatePresence mode="wait">
         <motion.div
           key={current.text}
-          initial={{ opacity: 0, y: 6 }}
+          initial={{ opacity: 0, y: 4 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -4 }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="space-y-0.5"
         >
-          {/* Sanskrit Text - Single Line Devanagari */}
-          <p className="font-sanskrit text-base sm:text-lg md:text-xl font-medium leading-tight text-white whitespace-nowrap drop-shadow-sm">
+          {/* Sanskrit Text - Compact single line Devanagari */}
+          <p className="font-sanskrit text-xs sm:text-base md:text-lg lg:text-xl font-medium leading-tight text-white whitespace-nowrap drop-shadow-sm">
             {current.text}
           </p>
 
-          {/* Translation - Single Line directly below */}
+          {/* Translation - Compact single line directly below */}
           <p
-            className="font-sans text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-medium text-white/80 whitespace-nowrap"
+            className="font-sans text-[8px] sm:text-[10px] uppercase tracking-[0.18em] font-medium text-white/80 whitespace-nowrap"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
             {current.meaning}
