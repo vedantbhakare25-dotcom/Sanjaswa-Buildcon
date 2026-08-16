@@ -35,40 +35,32 @@ function HeroShloka() {
 
   return (
     <div className="w-full flex justify-center items-center">
-      
       <AnimatePresence mode="wait">
         <motion.div
           key={current.text}
-          className="w-full flex flex-col items-center text-center max-w-2xl"
-          initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          exit={{ opacity: 0, y: -10, filter: "blur(8px)" }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="w-full flex flex-col items-center text-center max-w-2xl px-4"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
           {/* Sanskrit text */}
-          <p
-            className="
-              font-sanskrit
-              text-xl sm:text-2xl md:text-3xl
-              leading-[1.6]
-              text-white/85
-              text-center
-              px-4
-            "
-            style={{
-              textShadow: "0 0 25px rgba(59,130,246,0.18)",
-            }}
-          >
+          <p className="font-sanskrit text-xl sm:text-2xl md:text-3xl font-medium leading-relaxed text-white">
             {current.text}
           </p>
 
+          {/* Separator rule */}
+          <div className="my-3 h-[1px] w-[36px] bg-white/20" />
+
           {/* Meaning */}
-          <p className="mt-4 text-xs sm:text-sm tracking-[0.25em] uppercase text-white/50 text-center px-4">
+          <p
+            className="font-sans text-[10px] sm:text-xs uppercase tracking-[0.25em] font-medium text-white/70"
+            style={{ fontFamily: "Inter, sans-serif" }}
+          >
             {current.meaning}
           </p>
         </motion.div>
       </AnimatePresence>
-
     </div>
   );
 }

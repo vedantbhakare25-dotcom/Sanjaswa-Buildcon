@@ -5,18 +5,11 @@ function HeroLogo() {
   return (
     <motion.img
       src={logo}
-      className="mx-auto h-36 w-36 object-contain brightness-0 invert drop-shadow-[0_0_25px_rgba(59,130,246,0.25)]"
-      initial={{ opacity: 0, y: 40, scale: 0.95 }}
-      animate={{
-        opacity: 1,
-        y: [0, -6, 0],
-        scale: 1,
-      }}
-      transition={{
-        duration: 1.4,
-        ease: "easeOut",
-        y: { duration: 4, repeat: Infinity },
-      }}
+      alt="Sanjaswa Emblem"
+      className="mx-auto h-24 w-24 sm:h-28 sm:w-28 object-contain brightness-0 invert opacity-90"
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
     />
   );
 }

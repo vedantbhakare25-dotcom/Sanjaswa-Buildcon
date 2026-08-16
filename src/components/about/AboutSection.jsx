@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { Building2, Target, Eye, CheckCircle, MapPin } from "lucide-react";
 
 const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 24 },
+  initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-60px" },
-  transition: { duration: 0.9, delay, ease: [0.22, 1, 0.36, 1] },
+  viewport: { once: true, margin: "-40px" },
+  transition: { duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] },
 });
 
 function CountUp({ target, suffix = "" }) {
@@ -17,10 +17,9 @@ function CountUp({ target, suffix = "" }) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // Reset and start counting
           setCount(0);
-          const duration = 1800;
-          const steps = 60;
+          const duration = 1600;
+          const steps = 50;
           const increment = target / steps;
           let current = 0;
           const timer = setInterval(() => {
@@ -34,11 +33,10 @@ function CountUp({ target, suffix = "" }) {
           }, duration / steps);
           return () => clearInterval(timer);
         } else {
-          // Reset when out of view so it replays next time
           setCount(0);
         }
       },
-      { threshold: 0.3 },
+      { threshold: 0.2 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -51,6 +49,7 @@ function CountUp({ target, suffix = "" }) {
     </span>
   );
 }
+
 const whyChooseUs = [
   {
     title: "Decade of Experience",
@@ -99,21 +98,22 @@ const whyKopargaon = [
 
 function SectionLabel({ children }) {
   return (
-    <span className="text-[10px] font-medium uppercase tracking-[0.5em] text-blue-500">
+    <span
+      className="text-[10px] font-sans font-medium uppercase tracking-[0.35em]"
+      style={{ color: "rgba(31, 72, 255, 0.65)", fontFamily: "Inter, sans-serif" }}
+    >
       {children}
     </span>
   );
 }
 
-function GlassCard({ children, className = "" }) {
+function ArchitecturalCard({ children, className = "" }) {
   return (
     <div
-      className={`rounded-[28px] border p-6 md:p-8 ${className}`}
+      className={`rounded-2xl border p-6 md:p-8 bg-white ${className}`}
       style={{
-        background: "rgba(255,255,255,0.72)",
-        backdropFilter: "blur(20px)",
-        borderColor: "rgba(255,255,255,0.9)",
-        boxShadow: "0 20px 60px rgba(37,99,235,0.08)",
+        borderColor: "rgba(31, 72, 255, 0.12)",
+        boxShadow: "0 4px 20px rgba(0,0,0,0.02)",
       }}
     >
       {children}
@@ -125,83 +125,20 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden"
-      style={{
-        background:
-          "linear-gradient(180deg, #fcfdff 0%, #f8fbff 35%, #eef6ff 100%)",
-      }}
+      className="relative overflow-hidden bg-[#FAFAF8]"
     >
-      {/* Background glows */}
-      {/* Conic Glow Top Left */}
-      <motion.div
-        animate={{ rotate: [0, 360], scale: [1, 1.06, 1] }}
-        transition={{ duration: 55, repeat: Infinity, ease: "linear" }}
-        className="pointer-events-none absolute -left-72 -top-72 h-[900px] w-[900px] rounded-full"
-        style={{
-          background: `conic-gradient(from 0deg,rgba(255,0,128,0.14),rgba(255,120,0,0.12),rgba(255,255,0,0.10),rgba(0,255,180,0.12),rgba(0,140,255,0.14),rgba(140,0,255,0.14),rgba(255,0,128,0.14))`,
-          filter: "blur(180px)",
-        }}
-      />
-
-      {/* Conic Glow Bottom Right */}
-      <motion.div
-        animate={{ rotate: [360, 0], scale: [1, 1.08, 1] }}
-        transition={{ duration: 65, repeat: Infinity, ease: "linear" }}
-        className="pointer-events-none absolute -right-72 -bottom-72 h-[900px] w-[900px] rounded-full"
-        style={{
-          background: `conic-gradient(from 180deg,rgba(59,130,246,0.14),rgba(139,92,246,0.14),rgba(236,72,153,0.14),rgba(34,197,94,0.10),rgba(59,130,246,0.14))`,
-          filter: "blur(200px)",
-        }}
-      />
-
-      {/* Floating Blue Orb Left */}
-      <motion.div
-        animate={{ x: [0, 30, -20, 0], y: [0, -20, 15, 0] }}
-        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
-        className="pointer-events-none absolute left-0 top-10 h-[520px] w-[520px] rounded-full"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(59,130,246,0.25) 0%, rgba(96,165,250,0.12) 45%, transparent 75%)",
-          filter: "blur(110px)",
-        }}
-      />
-
-      {/* Floating Blue Orb Right */}
-      <motion.div
-        animate={{ x: [0, -25, 18, 0], y: [0, 20, -14, 0] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-        className="pointer-events-none absolute bottom-0 right-0 h-[520px] w-[520px] rounded-full"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(96,165,250,0.20) 0%, rgba(191,219,254,0.10) 45%, transparent 75%)",
-          filter: "blur(130px)",
-        }}
-      />
-
-      {/* Soft Center Bloom */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-        <div
-          className="h-[700px] w-[700px] rounded-full"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 40%, transparent 75%)",
-            filter: "blur(120px)",
-          }}
-        />
-      </div>
-
       <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
         {/* ── WHO ARE WE ── */}
         <motion.div className="mb-20" {...fadeUp(0)}>
-          <GlassCard>
+          <ArchitecturalCard>
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
               <div>
                 <SectionLabel>Who Are We</SectionLabel>
                 <h2
-                  className="mt-3 text-3xl font-bold text-slate-900 md:text-4xl lg:text-5xl leading-tight"
+                  className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight leading-tight"
                   style={{
-                    fontFamily: '"Cinzel", serif',
-                    color: "#1e3a8a",
+                    fontFamily: '"Barlow Condensed", "Bebas Neue", Impact, sans-serif',
+                    color: "#1F48FF",
                   }}
                 >
                   Building Maharashtra's
@@ -210,7 +147,7 @@ export default function AboutSection() {
                   <br />
                   at a Time
                 </h2>
-                <p className="mt-5 text-sm leading-relaxed text-slate-600">
+                <p className="mt-5 text-sm leading-relaxed text-slate-600 font-sans" style={{ fontFamily: "Inter, sans-serif" }}>
                   Sanjaswa Builcon is a Kopargaon-based construction company
                   with over a decade of experience delivering residential,
                   commercial, and infrastructure projects across the Ahmednagar
@@ -218,7 +155,7 @@ export default function AboutSection() {
                   community, we have grown from a small local contractor to one
                   of the most respected builders in the area.
                 </p>
-                <p className="mt-4 text-sm leading-relaxed text-slate-600">
+                <p className="mt-4 text-sm leading-relaxed text-slate-600 font-sans" style={{ fontFamily: "Inter, sans-serif" }}>
                   Our team of engineers, architects, and craftsmen work in
                   unison to bring your vision to life — on time, within budget,
                   and beyond expectations. At Sanjaswa, we don't just build
@@ -236,90 +173,83 @@ export default function AboutSection() {
                 ].map((stat) => (
                   <motion.div
                     key={stat.label}
-                    className="rounded-2xl border p-5 text-center"
-                    style={{
-                      background: "rgba(255,255,255,0.8)",
-                      borderColor: "#dbeafe",
-                      boxShadow: "0 8px 24px rgba(37,99,235,0.07)",
-                    }}
-                    whileHover={{ y: -4, scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
+                    className="rounded-xl border border-[rgba(31,72,255,0.12)] bg-white p-5 text-center"
+                    whileHover={{ y: -2 }}
+                    transition={{ duration: 0.2 }}
                   >
                     <p
-                      className="text-3xl font-black text-blue-600"
+                      className="text-4xl font-bold text-[#1F48FF]"
                       style={{
-                        fontFamily: '"Cinzel", serif',
+                        fontFamily: '"Barlow Condensed", "Bebas Neue", Impact, sans-serif',
                       }}
                     >
                       <CountUp target={stat.num} suffix={stat.suffix} />
                     </p>
-                    <p className="mt-1 text-xs text-slate-500">{stat.label}</p>
+                    <p className="mt-1 text-[10px] uppercase tracking-widest text-slate-500 font-sans" style={{ fontFamily: "Inter, sans-serif" }}>{stat.label}</p>
                   </motion.div>
                 ))}
               </div>
             </div>
-          </GlassCard>
+          </ArchitecturalCard>
         </motion.div>
 
         {/* ── VISION & MISSION ── */}
         <div className="mb-20 grid gap-6 md:grid-cols-2">
           <motion.div {...fadeUp(0.1)}>
-            <GlassCard className="h-full">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 mb-5">
-                <Eye size={22} color="#2563eb" />
+            <ArchitecturalCard className="h-full">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1F48FF]/[0.06] border border-[#1F48FF]/15 mb-5">
+                <Eye size={20} className="text-[#1F48FF]" />
               </div>
               <SectionLabel>Our Vision</SectionLabel>
               <h3
-                className="mt-3 text-2xl font-bold text-slate-900"
+                className="mt-3 text-2xl sm:text-3xl font-bold uppercase tracking-tight text-[#1F48FF]"
                 style={{
-                  fontFamily: '"Cinzel", serif',
-                  color: "#1e3a8a",
+                  fontFamily: '"Barlow Condensed", "Bebas Neue", Impact, sans-serif',
                 }}
               >
                 A Landmark in Every Skyline
               </h3>
-              <p className="mt-4 text-sm leading-relaxed text-slate-600">
+              <p className="mt-4 text-sm leading-relaxed text-slate-600 font-sans" style={{ fontFamily: "Inter, sans-serif" }}>
                 To be Maharashtra's most trusted construction partner —
                 recognised for creating spaces that inspire, endure, and elevate
                 communities. We envision a Kopargaon where every structure
                 reflects quality, dignity, and purpose.
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+              <p className="mt-3 text-sm leading-relaxed text-slate-600 font-sans" style={{ fontFamily: "Inter, sans-serif" }}>
                 We aspire to expand our footprint across the region while
                 staying true to our roots — building homes that families cherish
                 for generations and commercial spaces that drive local
                 prosperity.
               </p>
-            </GlassCard>
+            </ArchitecturalCard>
           </motion.div>
 
-          <motion.div {...fadeUp(0.18)}>
-            <GlassCard className="h-full">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-100 to-purple-200 mb-5">
-                <Target size={22} color="#7c3aed" />
+          <motion.div {...fadeUp(0.15)}>
+            <ArchitecturalCard className="h-full">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1F48FF]/[0.06] border border-[#1F48FF]/15 mb-5">
+                <Target size={20} className="text-[#1F48FF]" />
               </div>
               <SectionLabel>Our Mission</SectionLabel>
               <h3
-                className="mt-3 text-2xl font-bold text-slate-900"
+                className="mt-3 text-2xl sm:text-3xl font-bold uppercase tracking-tight text-[#1F48FF]"
                 style={{
-                  fontFamily: '"Cinzel", serif',
-                  color: "#1e3a8a",
+                  fontFamily: '"Barlow Condensed", "Bebas Neue", Impact, sans-serif',
                 }}
               >
                 Excellence in Every Brick
               </h3>
-              <p className="mt-4 text-sm leading-relaxed text-slate-600">
+              <p className="mt-4 text-sm leading-relaxed text-slate-600 font-sans" style={{ fontFamily: "Inter, sans-serif" }}>
                 To deliver construction projects that exceed client expectations
                 through innovative design, superior materials, skilled
                 workmanship, and transparent communication at every stage of the
                 journey.
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+              <p className="mt-3 text-sm leading-relaxed text-slate-600 font-sans" style={{ fontFamily: "Inter, sans-serif" }}>
                 Our mission is to make quality construction accessible —
                 ensuring every client, whether building their first home or a
                 large commercial complex, receives the same dedication and care.
               </p>
-            </GlassCard>
+            </ArchitecturalCard>
           </motion.div>
         </div>
 
@@ -328,15 +258,14 @@ export default function AboutSection() {
           <div className="mb-8 text-center">
             <SectionLabel>Why Choose Us</SectionLabel>
             <h2
-              className="mt-3 text-3xl font-bold text-slate-900 md:text-4xl"
+              className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-[#1F48FF]"
               style={{
-                fontFamily: '"Cinzel", serif',
-                color: "#1e3a8a",
+                fontFamily: '"Barlow Condensed", "Bebas Neue", Impact, sans-serif',
               }}
             >
               The Sanjaswa Difference
             </h2>
-            <p className="mt-3 mx-auto max-w-xl text-sm text-slate-500">
+            <p className="mt-3 mx-auto max-w-xl text-sm text-slate-500 font-sans" style={{ fontFamily: "Inter, sans-serif" }}>
               We combine local knowledge with professional expertise to deliver
               results that truly matter.
             </p>
@@ -346,32 +275,27 @@ export default function AboutSection() {
             {whyChooseUs.map((item, i) => (
               <motion.div
                 key={item.title}
-                className="rounded-2xl border p-5"
-                style={{
-                  background: "rgba(255,255,255,0.75)",
-                  borderColor: "#dbeafe",
-                  boxShadow: "0 8px 24px rgba(37,99,235,0.06)",
-                }}
-                initial={{ opacity: 0, y: 16 }}
+                className="rounded-xl border border-[rgba(31,72,255,0.12)] bg-white p-5"
+                initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
+                viewport={{ once: true, margin: "-30px" }}
                 transition={{
-                  duration: 0.6,
-                  delay: i * 0.07,
-                  ease: [0.22, 1, 0.36, 1],
+                  duration: 0.5,
+                  delay: i * 0.05,
+                  ease: [0.16, 1, 0.3, 1],
                 }}
-                whileHover={{ y: -4, scale: 1.01 }}
+                whileHover={{ y: -2 }}
               >
                 <div className="flex items-start gap-3">
                   <CheckCircle
                     size={18}
-                    className="mt-0.5 flex-none text-blue-500"
+                    className="mt-0.5 flex-none text-[#1F48FF]"
                   />
                   <div>
-                    <h4 className="text-sm font-semibold text-slate-900">
+                    <h4 className="text-sm font-semibold text-slate-900 font-sans" style={{ fontFamily: "Inter, sans-serif" }}>
                       {item.title}
                     </h4>
-                    <p className="mt-1.5 text-xs leading-relaxed text-slate-500">
+                    <p className="mt-1.5 text-xs leading-relaxed text-slate-500 font-sans" style={{ fontFamily: "Inter, sans-serif" }}>
                       {item.desc}
                     </p>
                   </div>
@@ -383,23 +307,22 @@ export default function AboutSection() {
 
         {/* ── WHY KOPARGAON ── */}
         <motion.div {...fadeUp(0.05)}>
-          <GlassCard>
+          <ArchitecturalCard>
             <div className="mb-8 flex items-start gap-4">
-              <div className="flex h-12 w-12 flex-none items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-100 to-emerald-200">
-                <MapPin size={22} color="#059669" />
+              <div className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-[#1F48FF]/[0.06] border border-[#1F48FF]/15">
+                <MapPin size={20} className="text-[#1F48FF]" />
               </div>
               <div>
                 <SectionLabel>Why Kopargaon</SectionLabel>
                 <h2
-                  className="mt-2 text-3xl font-bold text-slate-900 md:text-4xl "
+                  className="mt-2 text-3xl sm:text-4xl font-bold uppercase tracking-tight text-[#1F48FF]"
                   style={{
-                    fontFamily: '"Cinzel", serif',
-                    color: "#1e3a8a",
+                    fontFamily: '"Barlow Condensed", "Bebas Neue", Impact, sans-serif',
                   }}
                 >
                   Invest Where It Matters
                 </h2>
-                <p className="mt-2 max-w-2xl text-sm text-slate-500">
+                <p className="mt-2 max-w-2xl text-sm text-slate-500 font-sans" style={{ fontFamily: "Inter, sans-serif" }}>
                   Kopargaon is not just where we work — it's a city on the rise,
                   offering unmatched opportunity for homebuyers and investors
                   alike.
@@ -411,32 +334,27 @@ export default function AboutSection() {
               {whyKopargaon.map((item, i) => (
                 <motion.div
                   key={item.title}
-                  className="rounded-2xl border p-5"
-                  style={{
-                    background: "rgba(255,255,255,0.8)",
-                    borderColor: "#d1fae5",
-                    boxShadow: "0 8px 24px rgba(5,150,105,0.06)",
-                  }}
-                  initial={{ opacity: 0, y: 14 }}
+                  className="rounded-xl border border-[rgba(31,72,255,0.12)] bg-white p-5"
+                  initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
+                  viewport={{ once: true, margin: "-30px" }}
                   transition={{
-                    duration: 0.6,
-                    delay: i * 0.08,
-                    ease: [0.22, 1, 0.36, 1],
+                    duration: 0.5,
+                    delay: i * 0.06,
+                    ease: [0.16, 1, 0.3, 1],
                   }}
-                  whileHover={{ y: -3, scale: 1.01 }}
+                  whileHover={{ y: -2 }}
                 >
-                  <h4 className="text-sm font-semibold text-slate-900">
+                  <h4 className="text-sm font-semibold text-slate-900 font-sans" style={{ fontFamily: "Inter, sans-serif" }}>
                     {item.title}
                   </h4>
-                  <p className="mt-1.5 text-xs leading-relaxed text-slate-500">
+                  <p className="mt-1.5 text-xs leading-relaxed text-slate-500 font-sans" style={{ fontFamily: "Inter, sans-serif" }}>
                     {item.desc}
                   </p>
                 </motion.div>
               ))}
             </div>
-          </GlassCard>
+          </ArchitecturalCard>
         </motion.div>
       </div>
     </section>
