@@ -62,37 +62,37 @@ function Navbar({ menuOpen, onMenuOpen, onMenuClose }) {
       {/* Pure White Solid Navigation Bar */}
       <motion.nav
         className={`w-full bg-white/95 backdrop-blur-xl border-b border-[rgba(31,72,255,0.12)] text-slate-900 transition-all duration-300 ${
-          isScrolled ? "py-1.5 sm:py-2 shadow-md" : "py-2 sm:py-3.5"
+          isScrolled ? "py-2 shadow-md" : "py-3 sm:py-3.5"
         }`}
         initial={{ y: -60, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
-        <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 flex items-center justify-between">
-          {/* Logo & Brand Title - Calibrated Proportionally for Mobile */}
+        <div className="mx-auto max-w-[1440px] px-6 lg:px-10 flex items-center justify-between">
+          {/* Large Full-Height Logo & Brand Title */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex items-center gap-2.5 sm:gap-4 cursor-pointer text-left group flex-none"
+            className="flex items-center gap-4 cursor-pointer text-left group flex-none"
           >
-            {/* Logo Image - Scaled for Mobile (h-10 -> h-24) */}
+            {/* Large Emblem Logo Image */}
             <img
               src={logo}
               alt="Sanjaswa Buildcon Logo"
-              className="h-10 xs:h-12 sm:h-16 md:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-20 sm:h-30 md:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <div>
-              {/* Brand Title: Roboto Condensed Font */}
+              {/* Brand Title: Roboto Condensed */}
               <span
-                className="block text-xl xs:text-2xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-tight leading-none text-[#1F48FF]"
+                className="block text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-tight leading-none text-[#1F48FF]"
                 style={{
-                  fontFamily: '"Roboto Condensed", sans-serif',
+                  fontFamily: '"Barlow Condensed", "Bebas Neue", Impact, sans-serif',
                 }}
               >
                 SANJASWA BUILDCON
               </span>
-              {/* Tagline: Inter Font */}
+              {/* Tagline: Reverted to old Inter font */}
               <span
-                className="block text-[8px] xs:text-[9px] sm:text-[10px] font-sans uppercase font-medium tracking-[0.25em] text-[#1F48FF]/70 mt-0.5 sm:mt-1"
+                className="block text-[9px] sm:text-[10px] font-sans uppercase font-medium tracking-[0.25em] text-[#1F48FF]/70 mt-1"
                 style={{ fontFamily: "Inter, sans-serif" }}
               >
                 Building With Precision
@@ -104,7 +104,7 @@ function Navbar({ menuOpen, onMenuOpen, onMenuClose }) {
           <div className="hidden lg:flex flex-col items-end gap-2">
             {/* Top Sub-Row: CONTACT US and FIND US */}
             <div
-              className="flex items-center gap-6 text-xs font-semibold tracking-[0.2em] uppercase text-[#1F48FF]/80"
+              className="flex items-center gap-5 xl:gap-7 text-xs sm:text-sm font-semibold uppercase tracking-[0.10em]"
               style={{ fontFamily: '"Roboto Condensed", sans-serif' }}
             >
               <button
@@ -157,7 +157,7 @@ function Navbar({ menuOpen, onMenuOpen, onMenuClose }) {
                   type="button"
                   aria-label="Open search"
                   onClick={() => setSearchOpen((prev) => !prev)}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-[rgba(31,72,255,0.20)] bg-white text-[#1F48FF] hover:bg-[#1F48FF]/[0.06] hover:border-[#1F48FF] transition-all duration-200 cursor-pointer shadow-sm"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-[rgba(31,72,255,0.20)] text-[#1F48FF] hover:bg-[#1F48FF]/[0.06] hover:border-[#1F48FF] transition-all duration-200 cursor-pointer shadow-sm"
                 >
                   <Search size={15} />
                 </button>
@@ -245,7 +245,7 @@ function Navbar({ menuOpen, onMenuOpen, onMenuClose }) {
             type="button"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             onClick={menuOpen ? onMenuClose : onMenuOpen}
-            className="lg:hidden flex h-9 w-9 items-center justify-center rounded-lg border border-transparent hover:border-current cursor-pointer text-[#1F48FF]"
+            className="lg:hidden flex h-10 w-10 items-center justify-center rounded-lg border border-transparent hover:border-current cursor-pointer text-[#1F48FF]"
           >
             <AnimatePresence mode="wait">
               {menuOpen ? (
