@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import BackgroundSlideshow, { HERO_PROJECTS } from './BackgroundSlideshow.jsx';
 import HeroContent from './HeroContent.jsx';
@@ -6,16 +6,57 @@ import { MapPin } from 'lucide-react';
 
 function HeroSection() {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const [navbarHeight, setNavbarHeight] = useState(100);
   const currentProject = HERO_PROJECTS[activeSlideIndex] || HERO_PROJECTS[0];
 
+  // Dynamic Header Height Measurement via ResizeObserver
+  useEffect(() => {
+    const updateHeaderHeight = () => {
+      const headerEl = document.querySelector('header');
+      if (headerEl) {
+        const height = headerEl.getBoundingClientRect().height;
+        if (height > 0) {
+          setNavbarHeight(height);
+        }
+      }
+    };
+
+    updateHeaderHeight();
+
+    const headerEl = document.querySelector('header');
+    let observer;
+    if (headerEl && typeof window !== 'undefined' && window.ResizeObserver) {
+      observer = new ResizeObserver(() => {
+        updateHeaderHeight();
+      });
+      observer.observe(headerEl);
+    }
+
+    window.addEventListener('resize', updateHeaderHeight);
+
+    return () => {
+      window.removeEventListener('resize', updateHeaderHeight);
+      if (observer && headerEl) {
+        observer.unobserve(headerEl);
+      }
+    };
+  }, []);
+
   return (
-    <section className="relative mt-[88px] sm:mt-[108px] md:mt-[124px] h-[calc(100vh-88px)] sm:h-[calc(100vh-108px)] md:h-[calc(100vh-124px)] h-[calc(100dvh-88px)] sm:h-[calc(100dvh-108px)] md:h-[calc(100dvh-124px)] overflow-hidden text-white bg-[#080C14] select-none flex flex-col justify-between pb-6 px-6 lg:px-10">
+    <section
+      className="relative overflow-hidden text-white bg-[#080C14] select-none flex flex-col justify-between pb-6 px-6 lg:px-10 transition-all duration-150"
+      style={{
+        marginTop: `${navbarHeight}px`,
+        height: `calc(100vh - ${navbarHeight}px)`,
+        minHeight: `calc(100dvh - ${navbarHeight}px)`,
+      }}
+    >
       <BackgroundSlideshow
         activeIndex={activeSlideIndex}
         onSlideChange={setActiveSlideIndex}
       />
 
-      {/* Plain Text Dynamic Sub-heading Tag (No background, Roboto Condensed font) */}
+      {/* Plain Text Dynamic Sub-heading Tag */}
       <div className="absolute top-4 right-6 lg:right-10 z-20 hidden sm:block">
         <AnimatePresence mode="wait">
           <motion.div
