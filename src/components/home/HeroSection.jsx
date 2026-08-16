@@ -9,7 +9,7 @@ function HeroSection() {
   const currentProject = HERO_PROJECTS[activeSlideIndex] || HERO_PROJECTS[0];
 
   return (
-    <section className="relative mt-[88px] sm:mt-[108px] md:mt-[124px] h-[calc(100vh-88px)] sm:h-[calc(100vh-108px)] md:h-[calc(100vh-124px)] h-[calc(100dvh-88px)] sm:h-[calc(100dvh-108px)] md:h-[calc(100dvh-124px)] overflow-hidden text-white bg-[#080C14] select-none flex flex-col justify-between pb-3 sm:pb-6 px-4 sm:px-6 lg:px-10">
+    <section className="relative mt-[64px] xs:mt-[72px] sm:mt-[108px] md:mt-[124px] h-[calc(100vh-64px)] xs:h-[calc(100vh-72px)] sm:h-[calc(100vh-108px)] md:h-[calc(100vh-124px)] h-[calc(100dvh-64px)] xs:h-[calc(100dvh-72px)] sm:h-[calc(100dvh-108px)] md:h-[calc(100dvh-124px)] overflow-hidden text-white bg-[#080C14] select-none flex flex-col justify-between pb-3 sm:pb-6 px-4 sm:px-6 lg:px-10">
       <BackgroundSlideshow
         activeIndex={activeSlideIndex}
         onSlideChange={setActiveSlideIndex}
