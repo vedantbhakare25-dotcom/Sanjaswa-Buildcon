@@ -12,7 +12,9 @@ export default {
         },
       },
       fontFamily: {
-        display: ['"Cinzel"', 'Georgia', 'serif'],
+        heading: ['"Barlow Condensed"', '"Bebas Neue"', 'Impact', 'sans-serif'],
+        display: ['"Barlow Condensed"', '"Bebas Neue"', 'Impact', 'sans-serif'],
+        roboto: ['"Roboto Condensed"', 'sans-serif'],
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         sanskrit: ['"Noto Serif Devanagari"', 'Georgia', 'serif'],
       },

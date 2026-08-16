@@ -1,27 +1,50 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 
-const HERO_IMAGES = [
-  "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=85&fm=jpg&fit=crop",
-  "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=85&fm=jpg&fit=crop",
-  "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&q=85&fm=jpg&fit=crop",
-  "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1920&q=85&fm=jpg&fit=crop",
-  "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=85&fm=jpg&fit=crop",
+export const HERO_PROJECTS = [
+  {
+    id: 0,
+    title: "Ahilyanagar Commercial Hub",
+    location: "Ahilyanagar, MH",
+    url: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=85&fm=jpg&fit=crop",
+  },
+  {
+    id: 1,
+    title: "Sanjaswa Heights & Sky Villas",
+    location: "Kopargaon, MH",
+    url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=85&fm=jpg&fit=crop",
+  },
+  {
+    id: 2,
+    title: "Godavari Plaza & Retail Boulevard",
+    location: "Kopargaon, MH",
+    url: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&q=85&fm=jpg&fit=crop",
+  },
+  {
+    id: 3,
+    title: "Shirdi Transit Corridor Infra",
+    location: "Ahmednagar Dist.",
+    url: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1920&q=85&fm=jpg&fit=crop",
+  },
+  {
+    id: 4,
+    title: "Sanjaswa Industrial Park",
+    location: "Maharashtra",
+    url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=85&fm=jpg&fit=crop",
+  },
 ];
 
 const SLIDE_INTERVAL = 6000;
 
-function BackgroundSlideshow() {
-  const [activeIndex, setActiveIndex] = useState(0);
-
+function BackgroundSlideshow({ activeIndex, onSlideChange }) {
   useEffect(() => {
     const t = setInterval(() => {
-      setActiveIndex((i) => (i + 1) % HERO_IMAGES.length);
+      onSlideChange((i) => (i + 1) % HERO_PROJECTS.length);
     }, SLIDE_INTERVAL);
     return () => clearInterval(t);
-  }, []);
+  }, [onSlideChange]);
 
-  const activeImage = useMemo(() => HERO_IMAGES[activeIndex], [activeIndex]);
+  const activeImage = useMemo(() => HERO_PROJECTS[activeIndex]?.url, [activeIndex]);
 
   return (
     <div className="absolute inset-0 overflow-hidden bg-[#080C14]">

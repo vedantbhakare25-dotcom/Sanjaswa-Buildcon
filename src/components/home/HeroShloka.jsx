@@ -3,20 +3,16 @@ import { useEffect, useState } from "react";
 
 const shlokas = [
   {
+    text: "दृढमूलं हि यत् कार्यं न तद् विपद्यते क्वचित्।",
+    meaning: "A work built on a strong foundation never fails.",
+  },
+  {
     text: "योगः कर्मसु कौशलम्।",
     meaning: "Excellence in action is Yoga.",
   },
   {
-    text: "विद्या ददाति विनयं।",
-    meaning: "Knowledge gives humility.",
-  },
-  {
     text: "उद्यमेन हि सिद्ध्यन्ति कार्याणि न मनोरथैः।",
     meaning: "Success comes from effort, not desire alone.",
-  },
-  {
-    text: "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।",
-    meaning: "Focus on action, not just results.",
   },
 ];
 
@@ -34,27 +30,24 @@ function HeroShloka() {
   const current = shlokas[index];
 
   return (
-    <div className="w-full flex justify-center items-center">
+    <div className="text-left lg:text-right">
       <AnimatePresence mode="wait">
         <motion.div
           key={current.text}
-          className="w-full flex flex-col items-center text-center max-w-2xl px-4"
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          exit={{ opacity: 0, y: -4 }}
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          className="space-y-0.5"
         >
-          {/* Sanskrit text */}
-          <p className="font-sanskrit text-xl sm:text-2xl md:text-3xl font-medium leading-relaxed text-white">
+          {/* Sanskrit Text - Single Line Devanagari */}
+          <p className="font-sanskrit text-base sm:text-lg md:text-xl font-medium leading-tight text-white whitespace-nowrap drop-shadow-sm">
             {current.text}
           </p>
 
-          {/* Separator rule */}
-          <div className="my-3 h-[1px] w-[36px] bg-white/20" />
-
-          {/* Meaning */}
+          {/* Translation - Single Line directly below */}
           <p
-            className="font-sans text-[10px] sm:text-xs uppercase tracking-[0.25em] font-medium text-white/70"
+            className="font-sans text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-medium text-white/80 whitespace-nowrap"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
             {current.meaning}

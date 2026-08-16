@@ -1,168 +1,284 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Search, X, ArrowRight } from "lucide-react";
 import logo from "../../assets/images/logo.png";
+
+const SEARCH_INDEX = [
+  { title: "Sanjaswa Heights (Residential Sky Villas)", category: "Project", targetId: "projects" },
+  { title: "Ahilyanagar Commercial Hub (Office Complex)", category: "Project", targetId: "projects" },
+  { title: "Godavari Plaza & Retail Boulevard", category: "Project", targetId: "projects" },
+  { title: "Shirdi Corridor Infrastructure Project", category: "Project", targetId: "projects" },
+  { title: "Who Are We & Company History", category: "About", targetId: "about" },
+  { title: "Why Kopargaon Investment Advantages", category: "About", targetId: "about" },
+  { title: "Our Vision & Mission Statement", category: "About", targetId: "about" },
+  { title: "Send Project Enquiry & Consultation", category: "Contact", targetId: "contact" },
+  { title: "Corporate Office & Map Location", category: "Location", targetId: "map-section" },
+];
 
 function Navbar({ menuOpen, onMenuOpen, onMenuClose }) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchOpen, setSearchOpen] = useState(false);
+  const searchRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > window.innerHeight * 0.75);
+      setIsScrolled(window.scrollY > 30);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navBg = isScrolled
-    ? "rgba(250, 250, 248, 0.88)"
-    : "rgba(8, 12, 20, 0.70)";
+  // Close search dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (searchRef.current && !searchRef.current.contains(e.target)) {
+        setSearchOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
-  const borderBottomColor = isScrolled
-    ? "rgba(31, 72, 255, 0.12)"
-    : "rgba(255, 255, 255, 0.08)";
+  const scrollToSection = (id) => {
+    setSearchOpen(false);
+    setSearchQuery("");
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
-  const logoFilter = isScrolled
-    ? "none"
-    : "brightness(0) invert(1) opacity(90%)";
-
-  const burgerColor = isScrolled ? "#1F48FF" : "#ffffff";
-
-  const brandTextColor = isScrolled
-    ? "rgba(31, 72, 255, 0.75)"
-    : "rgba(255, 255, 255, 0.75)";
-
-  const boxShadow = isScrolled
-    ? "0 4px 20px rgba(0, 0, 0, 0.04)"
-    : "0 4px 30px rgba(0, 0, 0, 0.15)";
+  const filteredResults = searchQuery.trim()
+    ? SEARCH_INDEX.filter((item) =>
+        item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.category.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : [];
 
   return (
-    <motion.nav
-      className="fixed inset-x-0 top-0 z-[60] flex items-center justify-between px-6 sm:px-10 rounded-b-[24px] overflow-hidden"
-      style={{
-        height: "76px",
-        background: navBg,
-        backdropFilter: "blur(20px)",
-        WebkitBackdropFilter: "blur(20px)",
-        borderBottom: `1px solid ${borderBottomColor}`,
-        boxShadow,
-        transition: "background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease",
-      }}
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-    >
-      {/* Logo */}
-      <motion.button
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.97 }}
-        transition={{ duration: 0.2 }}
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="relative flex items-center justify-center cursor-pointer"
-        aria-label="Go to homepage"
+    <header className="fixed inset-x-0 top-0 z-[60] select-none">
+      {/* Pure White Solid Navigation Bar */}
+      <motion.nav
+        className={`w-full bg-white/95 backdrop-blur-xl border-b border-[rgba(31,72,255,0.12)] text-slate-900 transition-all duration-300 ${
+          isScrolled ? "py-2 shadow-md" : "py-3 sm:py-3.5"
+        }`}
+        initial={{ y: -60, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
-        <img
-          src={logo}
-          alt="Sanjaswa Builcon"
-          className="h-12 w-12 sm:h-14 sm:w-14 object-contain"
-          style={{
-            filter: logoFilter,
-            transition: "filter 0.5s ease",
-          }}
-        />
-      </motion.button>
+        <div className="mx-auto max-w-[1440px] px-6 lg:px-10 flex items-center justify-between">
+          {/* Large Full-Height Logo & Brand Title */}
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="flex items-center gap-4 cursor-pointer text-left group flex-none"
+          >
+            {/* Large Emblem Logo Image */}
+            <img
+              src={logo}
+              alt="Sanjaswa Buildcon Logo"
+              className="h-20 sm:h-30 md:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+            <div>
+              {/* Brand Title: Roboto Condensed */}
+              <span
+                className="block text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-tight leading-none text-[#1F48FF]"
+                style={{
+                  fontFamily: '"Barlow Condensed", "Bebas Neue", Impact, sans-serif',
+                }}
+              >
+                SANJASWA BUILDCON
+              </span>
+              {/* Tagline: Reverted to old Inter font */}
+              <span
+                className="block text-[9px] sm:text-[10px] font-sans uppercase font-medium tracking-[0.25em] text-[#1F48FF]/70 mt-1"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
+                Building With Precision
+              </span>
+            </div>
+          </button>
 
-      {/* Center Brand Tagline */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
-        className="absolute left-1/2 -translate-x-1/2"
-      >
-        <h1
-          className="text-[9px] sm:text-[10px] md:text-xs font-sans uppercase font-medium tracking-[0.25em] sm:tracking-[0.35em] whitespace-nowrap"
-          style={{
-            color: brandTextColor,
-            fontFamily: "Inter, sans-serif",
-            transition: "color 0.5s ease",
-          }}
-        >
-          BUILDING WITH PRECISION
-        </h1>
-      </motion.div>
+          {/* Right Column Layout: Stacked CONTACT US & FIND US Above Main Menu Items */}
+          <div className="hidden lg:flex flex-col items-end gap-2">
+            {/* Top Sub-Row: CONTACT US and FIND US */}
+            <div
+              className="flex items-center gap-5 xl:gap-7 text-xs sm:text-sm font-semibold uppercase tracking-[0.10em]"
+              style={{ fontFamily: '"Roboto Condensed", sans-serif' }}
+            >
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="hover:text-[#1F48FF] transition-colors cursor-pointer"
+              >
+                CONTACT US
+              </button>
+              <button
+                onClick={() => scrollToSection("map-section")}
+                className="hover:text-[#1F48FF] transition-colors cursor-pointer"
+              >
+                FIND US
+              </button>
+            </div>
 
-      {/* Menu Toggle Button */}
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        type="button"
-        aria-label={menuOpen ? "Close menu" : "Open menu"}
-        onClick={menuOpen ? onMenuClose : onMenuOpen}
-        className="group relative flex h-11 w-11 items-center justify-center rounded-lg border border-transparent hover:border-white/10 cursor-pointer"
-        style={{
-          background: "none",
-        }}
-      >
-        <AnimatePresence mode="wait">
-          {menuOpen ? (
-            <motion.span
-              key="close"
-              className="absolute flex flex-col items-center justify-center"
-              initial={{ opacity: 0, rotate: -45 }}
-              animate={{ opacity: 1, rotate: 0 }}
-              exit={{ opacity: 0, rotate: 45 }}
-              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            {/* Main Sub-Row: Main Navigation Links + Search Icon Symbol Button */}
+            <div
+              className="flex items-center gap-5 xl:gap-7 text-xs sm:text-sm font-semibold uppercase tracking-[0.16em]"
+              style={{ fontFamily: '"Roboto Condensed", sans-serif' }}
             >
-              <span
-                className="block h-[2px] w-5 origin-center rotate-45 translate-y-px rounded-full"
-                style={{
-                  background: burgerColor,
-                  transition: "background 0.5s ease",
-                }}
-              />
-              <span
-                className="block h-[2px] w-5 origin-center -rotate-45 -translate-y-px rounded-full"
-                style={{
-                  background: burgerColor,
-                  transition: "background 0.5s ease",
-                }}
-              />
-            </motion.span>
-          ) : (
-            <motion.span
-              key="burger"
-              className="absolute flex flex-col items-center justify-center gap-[5px]"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <span
-                className="block h-[2px] w-5 rounded-full transition-all duration-300 group-hover:w-6"
-                style={{
-                  background: burgerColor,
-                  transition: "background 0.5s ease, width 0.25s ease",
-                }}
-              />
-              <span
-                className="block h-[2px] w-3 rounded-full transition-all duration-300 group-hover:w-6"
-                style={{
-                  background: burgerColor,
-                  transition: "background 0.5s ease, width 0.25s ease",
-                }}
-              />
-              <span
-                className="block h-[2px] w-5 rounded-full transition-all duration-300 group-hover:w-6"
-                style={{
-                  background: burgerColor,
-                  transition: "background 0.5s ease, width 0.25s ease",
-                }}
-              />
-            </motion.span>
-          )}
-        </AnimatePresence>
-      </motion.button>
-    </motion.nav>
+              <button
+                onClick={() => scrollToSection("about")}
+                className="text-slate-700 hover:text-[#1F48FF] transition-colors cursor-pointer"
+              >
+                ABOUT US
+              </button>
+              <button
+                onClick={() => scrollToSection("projects")}
+                className="text-slate-700 hover:text-[#1F48FF] transition-colors cursor-pointer"
+              >
+                OUR WORK
+              </button>
+              <button
+                onClick={() => scrollToSection("about")}
+                className="text-slate-700 hover:text-[#1F48FF] transition-colors cursor-pointer"
+              >
+                WHY KOPARGAON
+              </button>
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="text-slate-700 hover:text-[#1F48FF] transition-colors cursor-pointer"
+              >
+                ENQUIRY
+              </button>
+
+              {/* Interactive Search Symbol Icon Button */}
+              <div ref={searchRef} className="relative">
+                <button
+                  type="button"
+                  aria-label="Open search"
+                  onClick={() => setSearchOpen((prev) => !prev)}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-[rgba(31,72,255,0.20)] text-[#1F48FF] hover:bg-[#1F48FF]/[0.06] hover:border-[#1F48FF] transition-all duration-200 cursor-pointer shadow-sm"
+                >
+                  <Search size={15} />
+                </button>
+
+                {/* Dropdown Popup Search Box */}
+                <AnimatePresence>
+                  {searchOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 4, scale: 0.96 }}
+                      transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                      className="absolute right-0 top-full mt-2 w-80 rounded-2xl border border-[rgba(31,72,255,0.18)] bg-white p-3 shadow-2xl text-slate-900 z-[70]"
+                    >
+                      {/* Search Input inside popup */}
+                      <div className="flex items-center gap-2 rounded-xl border border-[rgba(31,72,255,0.20)] bg-[#FAFAF8] px-3 py-2 text-slate-900 focus-within:border-[#1F48FF]">
+                        <Search size={14} className="text-[#1F48FF] flex-none" />
+                        <input
+                          type="text"
+                          value={searchQuery}
+                          placeholder="Search website..."
+                          autoFocus
+                          onChange={(e) => setSearchQuery(e.target.value)}
+                          className="w-full bg-transparent text-xs font-sans text-slate-900 outline-none placeholder:text-slate-400 font-medium"
+                          style={{ fontFamily: '"Roboto Condensed", sans-serif' }}
+                        />
+                        {searchQuery && (
+                          <button
+                            onClick={() => setSearchQuery("")}
+                            className="text-slate-400 hover:text-slate-700 cursor-pointer flex-none"
+                          >
+                            <X size={12} />
+                          </button>
+                        )}
+                      </div>
+
+                      {/* Matching Results */}
+                      {searchQuery.trim() !== "" && (
+                        <div className="mt-2">
+                          {filteredResults.length > 0 ? (
+                            <div className="max-h-60 overflow-y-auto space-y-1">
+                              {filteredResults.map((result, i) => (
+                                <button
+                                  key={i}
+                                  onClick={() => scrollToSection(result.targetId)}
+                                  className="w-full text-left p-2.5 rounded-xl hover:bg-[#1F48FF]/[0.06] transition-colors flex items-center justify-between group cursor-pointer"
+                                >
+                                  <div>
+                                    <span
+                                      className="block text-[9px] font-mono uppercase tracking-widest text-[#1F48FF] font-semibold"
+                                      style={{ fontFamily: '"Roboto Condensed", sans-serif' }}
+                                    >
+                                      {result.category}
+                                    </span>
+                                    <span
+                                      className="block text-xs font-semibold text-slate-900 group-hover:text-[#1F48FF]"
+                                      style={{ fontFamily: '"Roboto Condensed", sans-serif' }}
+                                    >
+                                      {result.title}
+                                    </span>
+                                  </div>
+                                  <ArrowRight size={13} className="text-[#1F48FF] opacity-0 group-hover:opacity-100 transition-opacity" />
+                                </button>
+                              ))}
+                            </div>
+                          ) : (
+                            <div
+                              className="p-3 text-center text-xs text-slate-500"
+                              style={{ fontFamily: '"Roboto Condensed", sans-serif' }}
+                            >
+                              No matching content found for "{searchQuery}"
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            type="button"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            onClick={menuOpen ? onMenuClose : onMenuOpen}
+            className="lg:hidden flex h-10 w-10 items-center justify-center rounded-lg border border-transparent hover:border-current cursor-pointer text-[#1F48FF]"
+          >
+            <AnimatePresence mode="wait">
+              {menuOpen ? (
+                <motion.span
+                  key="close"
+                  className="flex flex-col items-center justify-center"
+                  initial={{ opacity: 0, rotate: -45 }}
+                  animate={{ opacity: 1, rotate: 0 }}
+                  exit={{ opacity: 0, rotate: 45 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <span className="block h-[2px] w-5 origin-center rotate-45 translate-y-px rounded-full bg-[#1F48FF]" />
+                  <span className="block h-[2px] w-5 origin-center -rotate-45 -translate-y-px rounded-full bg-[#1F48FF]" />
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="burger"
+                  className="flex flex-col items-center justify-center gap-[5px]"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <span className="block h-[2px] w-5 rounded-full bg-[#1F48FF]" />
+                  <span className="block h-[2px] w-3.5 rounded-full bg-[#1F48FF]" />
+                  <span className="block h-[2px] w-5 rounded-full bg-[#1F48FF]" />
+                </motion.span>
+              )}
+            </AnimatePresence>
+          </button>
+        </div>
+      </motion.nav>
+    </header>
   );
 }
 
