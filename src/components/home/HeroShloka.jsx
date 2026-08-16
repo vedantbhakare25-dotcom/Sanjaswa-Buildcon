@@ -3,16 +3,16 @@ import { useEffect, useState } from "react";
 
 const shlokas = [
   {
+    text: "उद्यमेन हि सिद्ध्यन्ति कार्याणि न मनोरथैः।",
+    meaning: "SUCCESS COMES FROM EFFORT, NOT DESIRE ALONE.",
+  },
+  {
     text: "दृढमूलं हि यत् कार्यं न तद् विपद्यते क्वचित्।",
-    meaning: "A work built on a strong foundation never fails.",
+    meaning: "A WORK BUILT ON A STRONG FOUNDATION NEVER FAILS.",
   },
   {
     text: "योगः कर्मसु कौशलम्।",
-    meaning: "Excellence in action is Yoga.",
-  },
-  {
-    text: "उद्यमेन हि सिद्ध्यन्ति कार्याणि न मनोरथैः।",
-    meaning: "Success comes from effort, not desire alone.",
+    meaning: "EXCELLENCE IN ACTION IS YOGA.",
   },
 ];
 
@@ -41,13 +41,13 @@ function HeroShloka() {
           className="space-y-0.5"
         >
           {/* Sanskrit Text - Compact single line Devanagari */}
-          <p className="font-sanskrit text-xs sm:text-base md:text-lg lg:text-xl font-medium leading-tight text-white whitespace-nowrap drop-shadow-sm">
+          <p className="font-sanskrit text-[11px] xs:text-xs sm:text-base md:text-lg lg:text-xl font-medium leading-tight text-white whitespace-nowrap drop-shadow-sm">
             {current.text}
           </p>
 
           {/* Translation - Compact single line directly below */}
           <p
-            className="font-sans text-[8px] sm:text-[10px] uppercase tracking-[0.18em] font-medium text-white/80 whitespace-nowrap"
+            className="font-sans text-[8px] xs:text-[9px] sm:text-[10px] uppercase tracking-[0.18em] font-medium text-white/85 whitespace-nowrap drop-shadow-sm"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
             {current.meaning}

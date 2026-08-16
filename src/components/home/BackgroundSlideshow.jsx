@@ -52,17 +52,19 @@ function BackgroundSlideshow({ activeIndex, onSlideChange }) {
         <motion.img
           key={activeImage}
           src={activeImage}
-          className="absolute inset-0 h-full w-full object-cover"
+          alt="Hero Background City Architecture"
+          className="absolute inset-0 h-full w-full object-cover object-center"
           initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 0.45, scale: 1 }}
+          animate={{ opacity: 0.60, scale: 1 }}
           exit={{ opacity: 0, scale: 1.02 }}
-          transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
         />
       </AnimatePresence>
 
-      <div className="absolute inset-0 bg-[#080C14]/50" />
-      <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-[#080C14]/80 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#080C14]/80 to-transparent" />
+      {/* Dark Overlay calibrated for crisp white text readability while keeping city image visible */}
+      <div className="absolute inset-0 bg-[#080C14]/45" />
+      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#080C14]/70 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#080C14]/70 to-transparent" />
     </div>
   );
 }

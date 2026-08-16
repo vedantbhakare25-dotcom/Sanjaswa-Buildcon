@@ -6,7 +6,7 @@ import { MapPin } from 'lucide-react';
 
 function HeroSection() {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-  const [navbarHeight, setNavbarHeight] = useState(100);
+  const [navbarHeight, setNavbarHeight] = useState(90);
   const currentProject = HERO_PROJECTS[activeSlideIndex] || HERO_PROJECTS[0];
 
   // Dynamic Header Height Measurement via ResizeObserver
@@ -44,11 +44,11 @@ function HeroSection() {
 
   return (
     <section
-      className="relative overflow-hidden text-white bg-[#080C14] select-none flex flex-col justify-between pb-6 px-6 lg:px-10 transition-all duration-150"
+      className="relative overflow-hidden text-white bg-[#080C14] select-none flex flex-col justify-between pb-3 sm:pb-6 px-4 sm:px-6 lg:px-10 transition-all duration-150"
       style={{
         marginTop: `${navbarHeight}px`,
-        height: `calc(100vh - ${navbarHeight}px)`,
-        minHeight: `calc(100dvh - ${navbarHeight}px)`,
+        height: `calc(100svh - ${navbarHeight}px)`,
+        minHeight: `calc(100svh - ${navbarHeight}px)`,
       }}
     >
       <BackgroundSlideshow
@@ -56,8 +56,8 @@ function HeroSection() {
         onSlideChange={setActiveSlideIndex}
       />
 
-      {/* Plain Text Dynamic Sub-heading Tag */}
-      <div className="absolute top-4 right-6 lg:right-10 z-20 hidden sm:block">
+      {/* Dynamic Sub-heading Tag (Top Right of Hero Container) */}
+      <div className="absolute top-2.5 sm:top-4 right-4 sm:right-6 lg:right-10 z-20 hidden sm:block">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentProject.id}
@@ -75,13 +75,13 @@ function HeroSection() {
         </AnimatePresence>
       </div>
 
-      {/* Single Page Viewport Content Assembly */}
-      <div className="relative z-10 flex-1 flex flex-col justify-between">
+      {/* Single Viewport Hero Composition Assembly */}
+      <div className="relative z-10 flex-1 flex flex-col justify-between h-full min-h-0">
         <HeroContent />
       </div>
 
       {/* Bottom Vignette */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#080C14] to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-[#080C14] to-transparent" />
     </section>
   );
 }

@@ -11,7 +11,7 @@ function HeroCTA() {
     <motion.button
       type="button"
       onClick={handleClick}
-      className="inline-flex items-center gap-2 sm:gap-2.5 rounded-lg bg-[#1F48FF] px-4 py-2.5 sm:px-6 sm:py-3 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-white transition-all duration-200 hover:bg-[#1534c4] hover:gap-3 shadow-lg shadow-blue-600/30 cursor-pointer flex-none"
+      className="inline-flex items-center gap-2 sm:gap-2.5 rounded-lg bg-[#1F48FF] px-3.5 py-2 sm:px-6 sm:py-3 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-white transition-all duration-200 hover:bg-[#1534c4] hover:gap-3 shadow-lg shadow-blue-600/30 cursor-pointer flex-none"
       style={{ fontFamily: "Inter, sans-serif" }}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
